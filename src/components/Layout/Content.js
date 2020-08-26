@@ -1,8 +1,9 @@
 import React from "react"
+import style from "./Layout.module.scss"
 
 const Content = props => (
-    <div className="content">
-        {props.children}
+    <div className={ style.content }>
+        { props.children }
     </div>
 )
 

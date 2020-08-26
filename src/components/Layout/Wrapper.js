@@ -1,8 +1,10 @@
 import React from "react"
+import style from "./Layout.module.scss"
+
 
 const Wrapper = props => (
-    <div className="wrapper">
-        {props.children}
+    <div className={ style.wrapper }>
+        { props.children }
     </div>
 )
 

@@ -1,11 +1,9 @@
 import React from "react"
+import style from "./Layout.module.scss"
 
 const Footer = () => (
-    <div className="footer">
-        <p>
-            {/* developed by: Frolov Denis  */}
-            {/* <a rel="noopener noreferrer" target="_blank" href=""></a> */}
-        </p>
+    <div className={ style.footer }>
+        <p></p>
     </div>
 )
 

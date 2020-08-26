@@ -6,7 +6,7 @@ const WeatherData = () => {
     const {  city, list } = useContext(Context)
 
     return (
-        <Weather city={city} list={list}/>
+        <Weather city={ city } list={ list }/>
     )
 }
 
