@@ -4,9 +4,7 @@ import style from "./DayWeather.module.scss"
 const FullDay = ({ date, temp, description }) => {
 
     return (
-        <div>
-
-        </div>
+        <div className={ style.fullDay }></div>
     )
 }
 

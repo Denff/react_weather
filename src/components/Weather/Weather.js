@@ -3,16 +3,13 @@ import DateTime from "../DateTime/DateTime"
 
 const Weather = ({ city, list }) => {
 
-    let myDate = new Date(list[0].dt_txt)
-
     return (
         <div className="weather-data">
             <div className="weather-data__city">{ city }</div>
             <div className="weather-data__box">
                 <span className="weather-data__property">
                     <p className="weather-data__title"></p>
-                    {/* <p className="weather-data__date">{ myDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }</p> */}
-                    <DateTime />
+                        <DateTime />
                     <p className="weather-data__value">{ Math.round(list[0].main.temp) } &deg;</p>
                 </span>
                 <span className="weather-data__property">

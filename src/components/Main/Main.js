@@ -20,23 +20,19 @@ const Main = () => {
 
     const api_call = async e => {
         e.preventDefault()
-
         const location = e.target.elements.city.value
-        
         if (!location) {
             return setError("Пожалуйста, введите свой город"), setList(null)
         }
-
+        
         const url = `https://api.openweathermap.org/data/2.5/forecast?q=${ location }&appid=${ API_KEY }&units=metric`
-
         const request = axios.get(url)
         const response = await request
         setError(null)
         setList(response.data.list)
         setCity(response.data.city.name)
-
-        // console.log(response.data)
     }
+
     return (
         <div className={ style.main }>
             <Header />

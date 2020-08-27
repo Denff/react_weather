@@ -12,10 +12,6 @@ class HourData {
         this.main = data.main
         this.weather = data.weather
     }
-
-    getDateText() {
-        return (new Date(this.dt_txt)).toLocaleDateString([], { day: '2-digit', month: 'long' })
-    }
 }
 
 class DayData {
@@ -59,42 +55,20 @@ const DayWeather = () => {
 
 
     return (
-        <div className={style.list}>
+        <div className={ style.list }>
             { dayList.map((day, index) => {
                     if (!day.hasDayData() || index === 1) {
                         return null;
                     }
-                    
                     return (
-               
-                            <OneDay
-                                day={day}
-                                key={index}
-                                date={day.data.dt_txt}
-                                temp={day.data.main.temp}
-                                description={day.data.weather[0].description}
-                                icon={day.data.weather[0].icon}
-                            />
-
-       
-                        
-
-
-
-                        // <div key={index} className={style.list__day}>
-                        //     <div className={style.day__date}>
-                            
-                        //         {day.data.dt_txt}
-                        //     </div>
-
-                        //     <div className={style.day__temp}>
-                        //         {Math.round(day.data.main.temp)} &deg;
-                        //     </div>
-
-                        //     <div className={style.day__descrip}>
-                        //         {day.data.weather[0].description}
-                        //     </div>
-                        // </div>
+                        <OneDay
+                            day={ day }
+                            key={ index }
+                            date={ day.data.dt_txt }
+                            temp={ day.data.main.temp }
+                            description={ day.data.weather[0].description }
+                            icon={ day.data.weather[0].icon }
+                        />
                     )
                 })
             }

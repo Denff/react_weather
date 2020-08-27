@@ -2,12 +2,14 @@ import React, { useContext } from "react"
 import Context from "../../Context"
 import style from "./CitySearchForm.module.scss"
 import styles from "../Form/Form.module.scss"
+import cn from "classnames"
+
 
 const CitySearchForm = () => {
     const { api_call } = useContext(Context)
     return (
         <div className={ style.citySearch }>
-            <form onSubmit={ api_call } className={ style.citySearch__form, styles.form }>
+            <form onSubmit={ api_call } className={ cn(style.citySearch__form, styles.form) }>
                 <label className={ styles.form__label }>Введите город</label>
 
                 <div className={styles.form__box}>

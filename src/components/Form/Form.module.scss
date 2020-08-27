@@ -27,8 +27,6 @@
   color: transparent
 }
 
-
-
 input {
     height:50px;
     width:100%;
@@ -42,40 +40,32 @@ input {
         border: 2px solid #DAA520; 
     }
 } 
-.form__label {
-    color: darkgray;
-}
-.form__field {
-    display: block;
-    width: auto;
-    max-width: 360px;
-    flex: 1 0 auto;
-
-
-}
-
 .btn{
-  height:46px;
-  width:100%;
-  border-radius:1px;
-  border: none; 
-//   background:#40E0D0;
-  background:#DAA520;
-  font-weight:400;
-  transition:all 0.3s;
-  cursor:pointer;
-  z-index: 4;
-  text-indent: -99999px;
-  outline: none;
+    text-indent: -99999px;
+    height:46px;
+    width:100%;
+    border-radius:1px;
+    border: none; 
+    background:#DAA520;
+    font-weight:400;
+    transition:all 0.3s;
+    cursor:pointer;
+    z-index: 4;
+    outline: none;
 }
-
-
-
-
 .form {
     width: auto;
     max-width: 500px;
     padding: 10px;
+    &__label {
+        color: darkgray;
+    }
+    &__field {
+        display: block;
+        width: auto;
+        max-width: 360px;
+        flex: 1 0 auto;
+    }
     &__box {
         display: flex;
         flex-flow: row nowrap;
