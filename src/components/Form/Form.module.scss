@@ -1,0 +1,119 @@
+::-webkit-input-placeholder {
+    color:rgba(0,0,0,0.3);
+    transition: all 0.3s;
+}
+::-moz-placeholder {
+    color:rgba(0,0,0,0.3); 
+    transition: all 0.3s;
+}
+:-moz-placeholder {
+    color:rgba(0,0,0,0.3); 
+    transition: all 0.3s;
+}
+:-ms-input-placeholder {
+    color:rgba(0,0,0,0.3); 
+    transition: all 0.3s;
+}
+:focus::-webkit-input-placeholder {
+    color: transparent
+}
+:focus::-moz-placeholder {
+  color: transparent
+}
+:focus:-moz-placeholder {
+  color: transparent
+}
+:focus:-ms-input-placeholder {
+  color: transparent
+}
+
+
+
+input {
+    height:50px;
+    width:100%;
+    border-radius:1px;
+    border: 2px solid rgba(0,0,0,0.3); 
+    font-size:18px; 
+    padding:10px 60px 10px 10px;
+    transition:all 0.3s;
+    &:focus {
+        outline: none;
+        border: 2px solid #DAA520; 
+    }
+} 
+.form__label {
+    color: darkgray;
+}
+.form__field {
+    display: block;
+    width: auto;
+    max-width: 360px;
+    flex: 1 0 auto;
+
+
+}
+
+.btn{
+  height:46px;
+  width:100%;
+  border-radius:1px;
+  border: none; 
+//   background:#40E0D0;
+  background:#DAA520;
+  font-weight:400;
+  transition:all 0.3s;
+  cursor:pointer;
+  z-index: 4;
+  text-indent: -99999px;
+  outline: none;
+}
+
+
+
+
+.form {
+    width: auto;
+    max-width: 500px;
+    padding: 10px;
+    &__box {
+        display: flex;
+        flex-flow: row nowrap;
+        position: relative;
+        width: auto;
+        max-width: 360px;
+    }
+    &__action {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        display: block;
+        width: 50px;
+        border: 2px solid transparent; 
+        cursor:pointer;
+
+        &::before {
+            position: absolute;
+            content: '';
+            top: 50%;
+            right: 10px;
+            width: 32px;
+            height: 32px;
+            transform: translate3d(0, -50%, 0);
+            background-image: url(../../img/sun.png);
+            background-size: 32px 32px;
+            z-index: 5;
+        }
+        &::after {
+            position: absolute;
+            content: '';
+            top: 28px;
+            right: 13px;
+            width: 2px;
+            height: 14px;
+            transform: rotate(135deg);
+            background-color: rgba(0,0,0,0.7);
+            z-index: 5;
+        }
+    }
+}

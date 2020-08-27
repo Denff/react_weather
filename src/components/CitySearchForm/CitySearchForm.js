@@ -1,18 +1,22 @@
 import React, { useContext } from "react"
 import Context from "../../Context"
 import style from "./CitySearchForm.module.scss"
+import styles from "../Form/Form.module.scss"
 
 const CitySearchForm = () => {
     const { api_call } = useContext(Context)
     return (
-        <div className={ style.city-search }>
-            <form onSubmit={ api_call } className={ style.city-search__form, style.form }>
-                <label className={ style.form__label }>Введите город</label>
-                <div className={ style.form__field }>
-                    <input autoComplete="off" name="city" type="text" />
-                </div>
-                <div className={ style.form__action, style.city-search__submit }>
-                    <button className={ style.btn, style.btn_search }>поиск</button>
+        <div className={ style.citySearch }>
+            <form onSubmit={ api_call } className={ style.citySearch__form, styles.form }>
+                <label className={ styles.form__label }>Введите город</label>
+
+                <div className={styles.form__box}>
+                    <div className={ styles.form__field }>
+                        <input autoComplete="off" name="city" type="text" placeholder="Чикаго"/>
+                    </div>
+                    <div className={ styles.form__action }>
+                        <button className={ styles.btn }>поиск</button>
+                    </div>
                 </div>
             </form>
         </div>

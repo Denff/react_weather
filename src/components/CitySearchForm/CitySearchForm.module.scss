@@ -1,5 +1,11 @@
-.city-search {
-    box-shadow: 2px 3px 7px rgba(190, 190 190, 0.5);
+.search {
+    padding: 0px;
+}
+
+.citySearch {
+    display: flex;
+    justify-content: center;
+    // box-shadow: 2px 3px 7px RGBA(0, 0 190, 0.9);
 }
 .city-search__form {
     padding: 10px;

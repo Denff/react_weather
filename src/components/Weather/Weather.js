@@ -1,4 +1,5 @@
 import React from "react"
+import DateTime from "../DateTime/DateTime"
 
 const Weather = ({ city, list }) => {
 
@@ -10,8 +11,8 @@ const Weather = ({ city, list }) => {
             <div className="weather-data__box">
                 <span className="weather-data__property">
                     <p className="weather-data__title"></p>
-                    <p className="weather-data__date">{ myDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }</p>
-                    
+                    {/* <p className="weather-data__date">{ myDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }</p> */}
+                    <DateTime />
                     <p className="weather-data__value">{ Math.round(list[0].main.temp) } &deg;</p>
                 </span>
                 <span className="weather-data__property">

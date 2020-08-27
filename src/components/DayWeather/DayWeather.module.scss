@@ -1,18 +1,37 @@
 .list {
     display: flex;
     justify-content: flex-start;
+    flex-flow:  row wrap;
+    &__day {
+        flex: 1 0 auto;
+        width: auto;
+        max-width: 177px;
+        margin: 10px;
+        padding: 10px;
+        box-shadow: 2px 3px 7px #ccc;
+        display: flex;
+        flex-flow: column;
+        // flex: 0 0 auto;
+    }
 }
 
-.list__day {
-    margin: 10px;
-    padding: 10px;
-    box-shadow: 2px 3px 7px #ccc;
-    display: flex;
-    flex-flow: column;
+.day {
+    &__imgBox {
+        flex: 1 0 auto;
+        height: auto;
+        align-self: flex-end;
+    }
+    &__date {
+        padding: 0px;
+    }
 }
 
-.day__imgBox {
-    flex: 1 0 auto;
-    height: auto;
-    align-self: flex-end;
-}
+
+
+
+
+// .linkToFullDay {
+//     display: block;
+//     text-decoration: none;
+//     border: 2px solid green;
+// }

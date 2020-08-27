@@ -35,14 +35,13 @@ const Main = () => {
         setList(response.data.list)
         setCity(response.data.city.name)
 
-        console.log(response.data)
+        // console.log(response.data)
     }
     return (
         <div className={ style.main }>
             <Header />
             <Content>
-                <Context.Provider value={{ api_call, city, list, temp }}>
-                    <DateTime />
+                <Context.Provider value={{ api_call, city, list }}>
                     <WeatherSearch />
                     { error !== null && <p>{ <Error error={ error } /> }</p> }
                     { city !== null && <WeatherData /> }
