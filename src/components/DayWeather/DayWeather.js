@@ -31,15 +31,15 @@ const DayWeather = () => {
 
     return (
         <div className={style.list}>
-            {dayList.map(day => {
-                if (!day.hasDayData() || day.id === 0 ) {
+            {dayList.map((day, i) => {
+                if (!day.hasDayData() || i === 0 ) {
                     return null;
                 }
                 return (
-                    <NavLink to={'/day/' + day.id}>
+                    <NavLink to={'/day/' + i}>
                         <OneDay
                             day={day}
-                            key={day.id}
+                            key={i}
                             date={day.data.dt_txt}
                             temp={day.data.main.temp}
                             description={day.data.weather[0].description}

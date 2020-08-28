@@ -2,13 +2,15 @@ import style from './DayWeather.module.scss';
 
 import React from 'react';
 
-const FullDay = ({ id, time,  ...props}) => {
+const FullDay = ({ i, time, ...props}) => {
 
 
-    const dayId  = id;
+    const dayId = i;
 
     // const imgSrc = 'http://openweathermap.org/img/wn/' + time.weather + '@2x.png';
     // console.log(time);
+
+
     console.log(props);
     return (
         <div key={dayId} className={style.hourList}>

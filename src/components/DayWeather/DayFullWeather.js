@@ -30,14 +30,14 @@ const DayFullWeather = () => {
 
     return (
         <div className={style.list}>
-            {dayList.map(day => {
+            {dayList.map((day, i) => {
                 if (!day.hasDayData()) {
                     return null;
                 }
                 return (
                     <FullDay
                         day={day}
-                        key={day.id}
+                        key={i}
                         time={day.hourList}
                     />
                 );
