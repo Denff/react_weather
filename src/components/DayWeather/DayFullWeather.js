@@ -2,7 +2,7 @@ import style from './DayWeather.module.scss';
 
 import React, { useContext } from 'react';
 import Context from '../../Context';
-import FullDay from './FullDay';
+import FullDays from './FullDays';
 import { DayData } from './DayContainer';
 
 
@@ -35,7 +35,7 @@ const DayFullWeather = () => {
                     return null;
                 }
                 return (
-                    <FullDay
+                    <FullDays
                         day={day}
                         key={i}
                         time={day.hourList}

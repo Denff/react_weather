@@ -4,7 +4,7 @@ import React, { useContext } from 'react';
 import Context from '../../Context';
 import OneDay from './OneDay';
 import { DayData } from './DayContainer';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
 
 const DayWeather = () => {
@@ -36,7 +36,7 @@ const DayWeather = () => {
                     return null;
                 }
                 return (
-                    <NavLink to={'/day/' + i}>
+                    // <NavLink to={'/day/' + i}>
                         <OneDay
                             day={day}
                             key={i}
@@ -45,7 +45,7 @@ const DayWeather = () => {
                             description={day.data.weather[0].description}
                             icon={day.data.weather[0].icon}
                         />
-                    </NavLink>
+                    // </NavLink>
 
                     );
                 })

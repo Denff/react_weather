@@ -3,7 +3,10 @@ import Wrapper from './components/Layout/Wrapper';
 import Main from './components/Main/Main';
 import './App.scss';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import FullDay from './components/DayWeather/FullDay';
+// import FullDay from './components/DayWeather/FullDays';
+import OneDay from './components/DayWeather/OneDay';
+import DetailDay from './components/DayWeather/DetailDay';
+// import AllDayHours from './components/DayWeather/AllDayHours';
 
 class App extends Component {
 
@@ -12,9 +15,10 @@ class App extends Component {
 			<BrowserRouter>
 				<Wrapper>
 					<Switch>
-						<Route path="/" render={() => <Main />} />
-						{/* <Route path="/day/:dayId?" render={({ match: { params: { dayId }}}) => <FullDay id={dayId} />} /> */}
-						<Route path="/day/:dayId?" render={props => <FullDay {...props} />} />
+						<Route exact path="/" render={() => <Main />} />
+						<Route path="/day/:dayId?" render={({ match: { params: { dayId } } }) => <DetailDay id={dayId} />} />
+						{/* <Route path="/day/:dayId?" render={({ match: { params: { dayId }) => <FullDay id={dayId} />} /> */}
+						
 					</Switch>
 
 				</Wrapper>
