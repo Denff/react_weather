@@ -1,11 +1,40 @@
-import style from "./DayWeather.module.scss";
+import style from './DayWeather.module.scss';
 
-import React from "react";
+import React from 'react';
 
-const FullDay = ({ date, temp, description }) => {
+const FullDay = ({ id, time,  ...props}) => {
+
+
+    const dayId  = id;
+
+    // const imgSrc = 'http://openweathermap.org/img/wn/' + time.weather + '@2x.png';
+    // console.log(time);
+    console.log(props);
     return (
-        <div className={style.fullDay}></div>
-    )
+        <div key={dayId} className={style.hourList}>
+            {time.map((hour, k) => {
+                return (
+                    <div key={k} className={style.hour}>
+                        <div className={style.box}>{hour.dt_txt}</div>
+                        <div className={style.box}>{} </div>
+                        <div className={style.box}>{}</div>
+                        <div className={style.day__imgBox}>
+                            {/* <img src={imgSrc} alt="" /> */}
+                        </div>
+                    </div>
+                )
+
+
+            })}
+        </div>
+
+
+
+
+    );
 }
 
 export default FullDay;
+
+
+

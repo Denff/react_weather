@@ -1,9 +1,13 @@
-import React, { useContext } from "react";
-import Context from "../../Context";
+import React, { useContext } from 'react';
+import Context from '../../Context';
+
+
 
 
 const LoginApiKey = () => {
-    const { api_call } = useContext(Context)
+
+   const { api_call } = useContext(Context);
+
     return (
         <div className={style.citySearch}>
             <form onSubmit={api_call} className={style.citySearch__form, style.form}>
@@ -16,7 +20,7 @@ const LoginApiKey = () => {
                 </div>
             </form>
         </div>
-    )
+    );
 }
 
 export default LoginApiKey;

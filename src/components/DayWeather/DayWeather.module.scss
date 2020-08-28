@@ -24,3 +24,12 @@
         padding: 0px;
     }
 }
+.hourList {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow:  row wrap; 
+}
+
+// .hour {
+//     box-shadow: 2px 3px 7px rgb(170, 22, 22);
+// }

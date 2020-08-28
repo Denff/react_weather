@@ -10,6 +10,7 @@ import WeatherData from '../Weather/WeatherData';
 import Error from '../Error/Error';
 import Footer from '../Layout/Footer';
 import DayWeather from '../DayWeather/DayWeather';
+import DayFullWeather from '../DayWeather/DayFullWeather';
 
 const API_KEY = 'e659141f96cf034901170e56e6407daa';
 
@@ -25,7 +26,7 @@ const Main = () => {
         if (!location) {
             return setError('Пожалуйста, введите свой город'), setList(null);
         }
-        
+
         const url = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${API_KEY}&units=metric`;
         const request = axios.get(url);
         const response = await request;
@@ -38,10 +39,11 @@ const Main = () => {
         <div className={style.main}>
             <Header />
             <Content>
-                <Context.Provider value={{api_call, city, list}}>
+                <Context.Provider value={{ api_call, city, list }}>
                     <WeatherSearch />
                     {error !== null && <p>{<Error error={error} />}</p>}
                     {city !== null && <WeatherData />}
+                    {city !== null && <DayFullWeather />}
                     {city !== null && <DayWeather />}
                 </Context.Provider>
                 <Footer />
@@ -50,4 +52,4 @@ const Main = () => {
     );
 }
 
-export default Main
+export default Main;

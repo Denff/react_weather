@@ -1,9 +1,9 @@
-import style from "./CitySearchForm.module.scss";
-import styles from "../Form/Form.module.scss";
+import style from './CitySearchForm.module.scss';
+import styles from '../Form/Form.module.scss';
 
-import React, { useContext } from "react";
-import Context from "../../Context";
-import cn from "classnames";
+import React, { useContext } from 'react';
+import Context from '../../Context';
+import cn from 'classnames';
 
 const CitySearchForm = () => {
     

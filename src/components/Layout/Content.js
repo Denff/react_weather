@@ -1,6 +1,6 @@
-import style from "./Layout.module.scss";
+import style from './Layout.module.scss';
 
-import React from "react";
+import React from 'react';
 
 const Content = (props) => <div className={style.content}>{props.children}</div>;
 

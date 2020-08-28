@@ -2,12 +2,11 @@ import style from './DayWeather.module.scss';
 
 import React, { useContext } from 'react';
 import Context from '../../Context';
-import OneDay from './OneDay';
+import FullDay from './FullDay';
 import { DayData } from './DayContainer';
-import { NavLink } from 'react-router-dom';
 
 
-const DayWeather = () => {
+const DayFullWeather = () => {
 
     const { list } = useContext(Context);
     let dayList = {};
@@ -32,26 +31,20 @@ const DayWeather = () => {
     return (
         <div className={style.list}>
             {dayList.map(day => {
-                if (!day.hasDayData() || day.id === 0 ) {
+                if (!day.hasDayData()) {
                     return null;
                 }
                 return (
-                    <NavLink to={'/day/' + day.id}>
-                        <OneDay
-                            day={day}
-                            key={day.id}
-                            date={day.data.dt_txt}
-                            temp={day.data.main.temp}
-                            description={day.data.weather[0].description}
-                            icon={day.data.weather[0].icon}
-                        />
-                    </NavLink>
-
-                    );
-                })
+                    <FullDay
+                        day={day}
+                        key={day.id}
+                        time={day.hourList}
+                    />
+                );
+            })
             }
         </div>
     );
 }
 
-export default DayWeather;
+export default DayFullWeather;

@@ -1,5 +1,5 @@
-import React from "react";
-import DateTime from "../DateTime/DateTime";
+import React from 'react';
+import DateTime from '../DateTime/DateTime';
 
 const Weather = ({ city, list }) => {
 
