@@ -1,5 +1,5 @@
-import React, { useContext } from "react"
-import Context from "../../Context"
+import React, { useContext } from "react";
+import Context from "../../Context";
 
 
 const LoginApiKey = () => {
@@ -11,12 +11,12 @@ const LoginApiKey = () => {
                 <div className={style.form__field}>
                     <input autoComplete="off" name="api_key" type="text" />
                 </div>
-                <div className={style.form__action, style.citySearch__submit}>
-                    <button className={style.btn, style.btn_search}>войти</button>
+                <div className={style.form__action}>
+                    <button className={style.btn}>войти</button>
                 </div>
             </form>
         </div>
     )
 }
 
-export default LoginApiKey
+export default LoginApiKey;

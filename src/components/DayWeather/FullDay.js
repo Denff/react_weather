@@ -1,11 +1,11 @@
-import React from "react"
-import style from "./DayWeather.module.scss"
+import style from "./DayWeather.module.scss";
+
+import React from "react";
 
 const FullDay = ({ date, temp, description }) => {
-
     return (
-        <div className={ style.fullDay }></div>
+        <div className={style.fullDay}></div>
     )
 }
 
-export default FullDay
+export default FullDay;
