@@ -3,8 +3,43 @@ import style from './DayWeather.module.scss';
 import React, { useContext } from 'react';
 import Context from '../../Context';
 import OneDay from './OneDay';
-import { DayData } from './DayContainer';
-// import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
+
+export class HourData {
+    constructor(data = null) {
+        if (null === data) {
+            console.exception('HourData error: Data are required.');
+        }
+        this.dt_txt = data.dt_txt;
+        this.main = data.main;
+        this.weather = data.weather;
+    }
+}
+
+export class DayData {
+    constructor() {
+        this.hourList = [];
+        this.data = null;
+    }
+
+    addHourData(hourData) {
+        if (!(hourData instanceof HourData)) {
+            hourData = new HourData(hourData);
+        }
+
+        if (null === this.data) {
+            this.data = hourData;
+        }
+
+        this.hourList.push(hourData);
+    }
+
+    hasDayData() {
+        return !(null === this.data);
+    }
+}
+
 
 
 const DayWeather = () => {
@@ -31,22 +66,21 @@ const DayWeather = () => {
 
     return (
         <div className={style.list}>
-            {dayList.map((day, i) => {
-                if (!day.hasDayData() || i === 0 ) {
+            {dayList.map((day, index) => {
+                if (!day.hasDayData() || index === 0 ) {
                     return null;
                 }
                 return (
-                    // <NavLink to={'/day/' + i}>
+                    <NavLink to={'/day/' + index}>
                         <OneDay
-                            day={day}
-                            key={i}
+                            id={index}
+                            key={day.id}
                             date={day.data.dt_txt}
                             temp={day.data.main.temp}
                             description={day.data.weather[0].description}
                             icon={day.data.weather[0].icon}
                         />
-                    // </NavLink>
-
+                        </NavLink>
                     );
                 })
             }

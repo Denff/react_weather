@@ -42,7 +42,7 @@ const DetailDay = ({ id, key, date, time, ...props }) => {
 
 
 
-        <div key={key} className={style.hour}>
+        <div id={id} className={style.hour}>
             <div className={style.box}>{date}</div>
             <div className={style.box}>{} </div>
             <div className={style.box}>{}</div>

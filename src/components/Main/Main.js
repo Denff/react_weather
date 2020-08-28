@@ -10,7 +10,7 @@ import WeatherData from '../Weather/WeatherData';
 import Error from '../Error/Error';
 import Footer from '../Layout/Footer';
 import DayWeather from '../DayWeather/DayWeather';
-import DayFullWeather from '../DayWeather/DayFullWeather';
+
 
 const API_KEY = 'e659141f96cf034901170e56e6407daa';
 
@@ -43,7 +43,6 @@ const Main = () => {
                     <WeatherSearch />
                     {error !== null && <p>{<Error error={error} />}</p>}
                     {city !== null && <WeatherData />}
-                    {city !== null && <DayFullWeather />}
                     {city !== null && <DayWeather />}
                 </Context.Provider>
                 <Footer />
