@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Context from '../../Context';
 import DateTime from '../DateTime/DateTime';
 
-const Weather = ({ city, list }) => {
+const Today = () => {
+
+    const { city, list } = useContext(Context);
 
     return (
         <div className="weather-data">
@@ -12,17 +15,9 @@ const Weather = ({ city, list }) => {
                         <DateTime />
                     <p className="weather-data__value">{Math.round(list[0].main.temp)} &deg;</p>
                 </span>
-                <span className="weather-data__property">
-                    <p className="weather-data__title"></p>
-                    <p className="weather-data__value">{}</p>
-                </span>
-                <span className="weather-data__property">
-                    <p className="weather-data__title"></p>
-                    <p className="weather-data__value">{}</p>
-                </span>
             </div>
         </div>
     );
 }
 
-export default Weather;
+export default Today;

@@ -5,7 +5,7 @@ import DetailDay from './DetailDay';
 
 const FullDays = ({ day, i, date, time, ...props}) => {
 
-    // console.log(time);
+    console.log(day);
     // const dayId = i;
 
     return (

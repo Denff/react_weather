@@ -1,56 +1,25 @@
 import style from './DayWeather.module.scss';
 
 import React from 'react';
+import Hour from './Hour';
 
-const DetailDay = ({ id, key, date, time, ...props }) => {
-
-    // const imgSrc = 'http://openweathermap.org/img/wn/' + time.weather + '@2x.png';
-    // console.log(time);
-
-    // const dayId = id;
-    console.log(props);
-
-
-    // <div className={style.hourList}>
-    //     {time.map((hour, k) => {
-
-    //         return (
-    //             <AllDayHours
-    //                 day={day}
-    //                 id={day.i}
-    //                 hour={hour}
-    //                 key={hour.k}
-    //                 time={time}
-    //                 date={hour.dt_txt}
-    //             />
-    //         )
-
-
-    //     })}
-    // </div>
-
-
+const DetailDay = ({ list }) => {
 
     return (
-        // <div>
-        //     {HourData.map((hour, k) => {
-        // </div>
+        <div className={style.hourList}>
+            {list.map((hour, k) => {
 
-
-
-
-
-
-
-        <div id={id} className={style.hour}>
-            <div className={style.box}>{date}</div>
-            <div className={style.box}>{} </div>
-            <div className={style.box}>{}</div>
-            <div className={style.day__imgBox}>
-                {/* <img src={imgSrc} alt="" /> */}
-            </div>
+                return (
+                    <Hour
+                        list={list}
+                        date={hour.dt_txt}
+                        temp={hour.main.temp}
+                        icon={hour.weather[0].icon}
+                        weather={hour.weather[0].main}
+                    />
+                )
+            })}
         </div>
-
     );
 }
 

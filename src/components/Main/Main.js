@@ -6,10 +6,10 @@ import Context from '../../Context';
 import Header from '../Layout/Header';
 import Content from '../Layout/Content';
 import WeatherSearch from '../CitySearchForm/CitySearchForm';
-import WeatherData from '../Weather/WeatherData';
 import Error from '../Error/Error';
 import Footer from '../Layout/Footer';
-import DayWeather from '../DayWeather/DayWeather';
+import Days from '../DayWeather/Days';
+import Today from '../Today/Today';
 
 
 const API_KEY = 'e659141f96cf034901170e56e6407daa';
@@ -42,8 +42,8 @@ const Main = () => {
                 <Context.Provider value={{ api_call, city, list }}>
                     <WeatherSearch />
                     {error !== null && <p>{<Error error={error} />}</p>}
-                    {city !== null && <WeatherData />}
-                    {city !== null && <DayWeather />}
+                    {city !== null && <Today />}
+                    {city !== null && <Days />}
                 </Context.Provider>
                 <Footer />
             </Content>

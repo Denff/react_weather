@@ -4,9 +4,10 @@ import React, { useContext } from 'react';
 import Context from '../../Context';
 import OneDay from './OneDay';
 import { NavLink } from 'react-router-dom';
+import DetailDay from './DetailDay';
 
 
-export class HourData {
+class HourData {
     constructor(data = null) {
         if (null === data) {
             console.exception('HourData error: Data are required.');
@@ -17,7 +18,7 @@ export class HourData {
     }
 }
 
-export class DayData {
+class DayData {
     constructor() {
         this.hourList = [];
         this.data = null;
@@ -40,9 +41,7 @@ export class DayData {
     }
 }
 
-
-
-const DayWeather = () => {
+const Days= () => {
 
     const { list } = useContext(Context);
     let dayList = {};
@@ -62,30 +61,51 @@ const DayWeather = () => {
         return dateA - dateB;
     })
 
-    // console.log(dayList);
-
     return (
-        <div className={style.list}>
-            {dayList.map((day, index) => {
-                if (!day.hasDayData() || index === 0 ) {
-                    return null;
+        <div>
+            <div>
+                {dayList.map((day, index) => {
+                    if (!day.hasDayData() || index !== 0) {
+                        return null;
+                    }
+                    return (
+                            <DetailDay
+                                day={day}
+                                list={day.hourList}
+                                
+                                id={index}
+                                key={day.id}
+
+                            />
+                    );
+                })
                 }
-                return (
-                    <NavLink to={'/day/' + index}>
-                        <OneDay
-                            id={index}
-                            key={day.id}
-                            date={day.data.dt_txt}
-                            temp={day.data.main.temp}
-                            description={day.data.weather[0].description}
-                            icon={day.data.weather[0].icon}
-                        />
+            </div>
+
+            <div className={style.list}>
+                {dayList.map((day, index) => {
+                    if (!day.hasDayData() || index === 0) {
+                        return null;
+                    }
+                    return (
+                        <NavLink to={'/day/' + index} >
+
+                            <OneDay
+                                day={day}
+                                id={index}
+                                key={day.id}
+                                date={day.data.dt_txt}
+                                temp={day.data.main.temp}
+                                description={day.data.weather[0].description}
+                                icon={day.data.weather[0].icon}
+                            />
                         </NavLink>
                     );
                 })
-            }
+                }
+            </div>
         </div>
     );
 }
 
-export default DayWeather;
+export default Days;
