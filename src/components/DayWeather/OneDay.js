@@ -3,11 +3,11 @@ import style from './DayWeather.module.scss';
 import React from 'react';
 import cn from 'classnames';
 
-const OneDay = ({ date, temp, icon }) => {
+const OneDay = ({ day, date, temp, description, icon }) => {
 
-    const dayMonthDate = new Date(date).toLocaleDateString([], { day: '2-digit', month: 'long' });
-    const imgSrc = 'http://openweathermap.org/img/wn/' + icon + '@2x.png';
-    const temperature = Math.round(temp);
+    let dayMonthDate = new Date(date).toLocaleDateString([], { day: '2-digit', month: 'long' });
+    let imgSrc = 'http://openweathermap.org/img/wn/' + icon + '@2x.png';
+    let temperature = Math.round(temp);
 
     return (
         <div>

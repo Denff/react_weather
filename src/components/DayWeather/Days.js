@@ -4,7 +4,7 @@ import React, { useContext } from 'react';
 import Context from '../../Context';
 import OneDay from './OneDay';
 import { NavLink } from 'react-router-dom';
-import DetailDay from './DetailDay';
+
 
 
 class HourData {
@@ -63,42 +63,23 @@ const Days= () => {
 
     return (
         <div>
-            <div>
-                {dayList.map((day, index) => {
-                    if (!day.hasDayData() || index !== 0) {
-                        return null;
-                    }
-                    return (
-                            <DetailDay
-                                day={day}
-                                list={day.hourList}
-                                
-                                id={index}
-                                key={day.id}
-
-                            />
-                    );
-                })
-                }
-            </div>
-
             <div className={style.list}>
                 {dayList.map((day, index) => {
-                    if (!day.hasDayData() || index === 0) {
+                    // if (!day.hasDayData() || index === 0) {
+                    if ( index === 0 ) {
                         return null;
                     }
                     return (
                         <NavLink to={'/day/' + index} >
-
                             <OneDay
                                 day={day}
-                                id={index}
                                 key={day.id}
                                 date={day.data.dt_txt}
                                 temp={day.data.main.temp}
                                 description={day.data.weather[0].description}
                                 icon={day.data.weather[0].icon}
                             />
+                                
                         </NavLink>
                     );
                 })

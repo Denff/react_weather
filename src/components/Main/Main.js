@@ -10,15 +10,16 @@ import Error from '../Error/Error';
 import Footer from '../Layout/Footer';
 import Days from '../DayWeather/Days';
 import Today from '../Today/Today';
+// import { withRouter } from 'react-router-dom';
 
 
-const API_KEY = 'e659141f96cf034901170e56e6407daa';
+// const API_KEY = '';
+// let fff = 'e659141f96cf034901170e56e6407daa';
 
-const Main = () => {
-
-    const [ list, setList ] = useState(null);
-    const [ city, setCity ] = useState(null);
-    const [ error, setError ] = useState(null);
+const Main = ({ apiKey }) => {
+    const [list, setList] = useState(null);
+    const [city, setCity] = useState(null);
+    const [error, setError] = useState(null);
 
     const api_call = async e => {
         e.preventDefault();
@@ -27,7 +28,8 @@ const Main = () => {
             return setError('Пожалуйста, введите свой город'), setList(null);
         }
 
-        const url = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${API_KEY}&units=metric`;
+        // const url = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=metric`;
+        const url = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}`;
         const request = axios.get(url);
         const response = await request;
         setError(null);
@@ -51,4 +53,5 @@ const Main = () => {
     );
 }
 
+// export default withRouter(Main);
 export default Main;
