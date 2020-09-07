@@ -37,7 +37,7 @@ input {
     transition:all 0.3s;
     &:focus {
         outline: none;
-        border: 2px solid #DAA520; 
+        border: 2px solid #40E0D0; 
     }
 } 
 
@@ -47,7 +47,7 @@ input {
     width:100%;
     border-radius:1px;
     border: none; 
-    background:#DAA520;
+    background:#40E0D0;
     font-weight:400;
     transition:all 0.3s;
     cursor:pointer;

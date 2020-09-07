@@ -15,7 +15,7 @@ const CitySearchForm = () => {
                 <label className={styles.form__label}>Введите город</label>
                 <div className={styles.form__box}>
                     <div className={styles.form__field}>
-                        <input autoComplete="off" name="city" type="text" placeholder="Чикаго"/>
+                        <input autoComplete="off" name="city" type="text" placeholder="Челябинск"/>
                     </div>
                     <div className={styles.form__action}>
                         <button className={styles.btn}>поиск</button>

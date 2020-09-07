@@ -10,6 +10,7 @@ import Error from '../Error/Error';
 import Footer from '../Layout/Footer';
 import Days from '../DayWeather/Days';
 import Today from '../Today/Today';
+import DaysContainer from '../DayWeather/DaysContainer';
 // import { withRouter } from 'react-router-dom';
 
 
@@ -44,8 +45,8 @@ const Main = ({ apiKey }) => {
                 <Context.Provider value={{ api_call, city, list }}>
                     <WeatherSearch />
                     {error !== null && <p>{<Error error={error} />}</p>}
-                    {city !== null && <Today />}
-                    {city !== null && <Days />}
+                    {/* {city !== null && <Today />} */}
+                    {city !== null && <DaysContainer />}
                 </Context.Provider>
                 <Footer />
             </Content>

@@ -1,9 +1,11 @@
-import style from './DayWeather.module.scss';
+// import style from './DayWeather.module.scss';
 
 import React, { useContext } from 'react';
 import Context from '../../Context';
-import OneDay from './OneDay';
-import { NavLink } from 'react-router-dom';
+// import OneDay from './OneDay';
+// import { NavLink } from 'react-router-dom';
+import Today from '../Today/Today';
+import Days from './Days';
 
 
 
@@ -41,7 +43,7 @@ class DayData {
     }
 }
 
-const Days= () => {
+const DaysContainer = () => {
 
     const { list } = useContext(Context);
     let dayList = {};
@@ -61,38 +63,12 @@ const Days= () => {
         return dateA - dateB;
     });
 
-
-
-
     return (
         <div>
-
-            <div className={style.list}>
-                {dayList.map((day, index) => {
-                    // if (!day.hasDayData() || index === 0) {
-                    if ( index === 0 ) {
-                        return null;
-                    }
-                    return (
-
-                        <NavLink to={'/day/' + index} >
-                            <OneDay
-                                day={day}
-                                key={day.id}
-                                date={day.data.dt_txt}
-                                temp={day.data.main.temp}
-                                description={day.data.weather[0].description}
-                                icon={day.data.weather[0].icon}
-                            />
-                                
-                        </NavLink>
-
-                    );
-                })
-                }
-            </div>
+            <Today dayList={dayList}/>
+            <Days dayList={dayList}/>
         </div>
     );
 }
 
-export default Days;
+export default DaysContainer;
