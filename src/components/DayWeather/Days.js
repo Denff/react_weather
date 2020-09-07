@@ -4,6 +4,8 @@ import React, { useContext } from 'react';
 import Context from '../../Context';
 import OneDay from './OneDay';
 import { NavLink } from 'react-router-dom';
+import DetailDay from './DetailDay';
+import Today from '../Today/Today';
 
 
 
@@ -70,7 +72,7 @@ const Days= () => {
             <div className={style.list}>
                 {dayList.map((day, index) => {
                     // if (!day.hasDayData() || index === 0) {
-                    if ( index === 0 ) {
+                    if (index === 0 ) {
                         return null;
                     }
                     return (

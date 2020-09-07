@@ -8,7 +8,7 @@ const OneDay = ({ day, date, temp, description, icon }) => {
     let dayMonthDate = new Date(date).toLocaleDateString([], { day: '2-digit', month: 'long' });
     let imgSrc = 'http://openweathermap.org/img/wn/' + icon + '@2x.png';
     let temperature = Math.round(temp -273);
-
+    console.log(day);
     return (
         <div>
             <div className={cn(style.list__day, style.day)}>

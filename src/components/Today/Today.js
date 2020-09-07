@@ -19,15 +19,3 @@ const Today = () => {
 export default Today;
 
 
-
-
-
-{/* <div className="weather-data">
-    <div className="weather-data__city">{city}</div>
-    <div className="weather-data__box">
-        <span className="weather-data__property">
-            <p className="weather-data__title"></p>
-            <p className="weather-data__value">{temperature} &deg;</p>
-        </span>
-    </div>
-</div> */}
