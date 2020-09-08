@@ -3,7 +3,7 @@ import style from './Days.module.scss';
 import React from 'react';
 import Hour from './Hour';
 
-const DetailDay = ({ list }) => {
+const DetailHour = ({ list }) => {
 
     return (
         <div className={style.hourList}>

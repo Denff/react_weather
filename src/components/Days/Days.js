@@ -2,45 +2,9 @@ import style from './Days.module.scss';
 
 import React, { useContext } from 'react';
 import Context from '../../Context';
-import OneDay from './OneDay';
+import OneDay from './z---OneDay';
 import { NavLink } from 'react-router-dom';
 
-
-
-
-class HourData {
-    constructor(data = null) {
-        if (null === data) {
-            console.exception('HourData error: Data are required.');
-        }
-        this.dt_txt = data.dt_txt;
-        this.main = data.main;
-        this.weather = data.weather;
-    }
-}
-
-class DayData {
-    constructor() {
-        this.hourList = [];
-        this.data = null;
-    }
-
-    addHourData(hourData) {
-        if (!(hourData instanceof HourData)) {
-            hourData = new HourData(hourData);
-        }
-
-        if (null === this.data) {
-            this.data = hourData;
-        }
-
-        this.hourList.push(hourData);
-    }
-
-    hasDayData() {
-        return !(null === this.data);
-    }
-}
 
 const Days= () => {
 
@@ -68,30 +32,6 @@ const Days= () => {
     return (
         <div>
 
-            <div className={style.list}>
-                {dayList.map((day, index) => {
-                    // if (!day.hasDayData() || index === 0) {
-                    if (index === 0 ) {
-                        return null;
-                    }
-                    return (
-
-                        <NavLink to={'/day/' + index} >
-                            <OneDay
-                                day={day}
-                                key={day.id}
-                                date={day.data.dt_txt}
-                                temp={day.data.main.temp}
-                                description={day.data.weather[0].description}
-                                icon={day.data.weather[0].icon}
-                            />
-                                
-                        </NavLink>
-
-                    );
-                })
-                }
-            </div>
         </div>
     );
 }

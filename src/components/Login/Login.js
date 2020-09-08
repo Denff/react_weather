@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import styles from '../Form/Form.module.scss';
 import style from './Login.module.scss';
 import cn from 'classnames';
+
 let easeKey = 'bcf980ddad060235362e000190ac5da3'; //chelinvest
 
 class Login extends Component {
-
 
     constructor(props) {
         super(props);
@@ -19,8 +19,8 @@ class Login extends Component {
         this.setState({ value: event.target.value });
     }
 
-    handleSubmit = (e) => {
-        e.preventDefault();
+    handleSubmit = (event) => {
+        event.preventDefault();
 
         const apiKey = this.state.value;
 
@@ -36,12 +36,13 @@ class Login extends Component {
                     console.log(result.response.ok);
                     localStorage.setItem('api_key', apiKey);
                     window.location.reload();
-                } else { 
+                } else {
                     alert('Неверный ключ');
-                    apiKey = '';
                 }
             })
-            .catch(error => alert('Неверный ключ'));
+            .catch(error => {
+                alert('Неверный ключ');
+            });
 
     };
 
@@ -49,8 +50,8 @@ class Login extends Component {
         return (
             <div className={style.login__container}>
                 <form onSubmit={this.handleSubmit} className={cn(styles.form, styles.form__login)}>
-                    <label>Введите Ваш api_key или мой ключ: {easeKey}</label>
-                    <div>
+                    <label className={style.login__label}>Введите Ваш api_key или этот ключ: {easeKey}</label>
+                    <div className={style.login__field}>
                         <input
                             name={"api_key"}
                             type="text"
@@ -58,12 +59,12 @@ class Login extends Component {
                             onChange={this.handleChange}
                         />
                     </div>
-                    <div>
+                    <div className={style.login__action}>
                         <button type="submit" className={cn(styles.btn, styles.btn__login)}>Login</button>
                     </div>
                 </form>
             </div>
-            
+
         );
     }
 }

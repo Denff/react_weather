@@ -53,6 +53,31 @@ input {
     cursor:pointer;
     z-index: 4;
     outline: none;
+    &_action {
+        &::before {
+            position: absolute;
+            content: '';
+            top: 50%;
+            right: 10px;
+            width: 32px;
+            height: 32px;
+            transform: translate3d(0, -50%, 0);
+            background-image: url(../../img/sun.png);
+            background-size: 32px 32px;
+            z-index: 5;
+        }
+        &::after {
+            position: absolute;
+            content: '';
+            top: 28px;
+            right: 13px;
+            width: 2px;
+            height: 14px;
+            transform: rotate(135deg);
+            background-color: rgba(0,0,0,0.7);
+            z-index: 5;
+        }
+    }
     &__login {
         text-indent: 0;
     }
@@ -86,33 +111,12 @@ input {
         width: 50px;
         border: 2px solid transparent; 
         cursor:pointer;
-
-        &::before {
-            position: absolute;
-            content: '';
-            top: 50%;
-            right: 10px;
-            width: 32px;
-            height: 32px;
-            transform: translate3d(0, -50%, 0);
-            background-image: url(../../img/sun.png);
-            background-size: 32px 32px;
-            z-index: 5;
-        }
-        &::after {
-            position: absolute;
-            content: '';
-            top: 28px;
-            right: 13px;
-            width: 2px;
-            height: 14px;
-            transform: rotate(135deg);
-            background-color: rgba(0,0,0,0.7);
-            z-index: 5;
-        }
     }
     &__login {
         padding: 20px;
         background-color: rgba(0,0,0,0.1);
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
     }
 }

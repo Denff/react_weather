@@ -1,17 +1,25 @@
 .content {
-    padding: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: calc(100vh - 120px);
+
 }
-.wrapper {
-    margin: 0 auto;
-    width: auto;
-    max-width: 970px;
-}
+
 .footer {
-    padding: 0;
+    padding: 20px 0;
+    background-color: #FFEFD5;
+    box-shadow: 2px 5px 5px rgba(255, 239, 213, 0.5);
+    text-align: center;
+
 }
 .header {
     padding: 10px 0;
     text-align: center;
+    min-height: 120px;
+    background-color: #FFEFD5;
+    box-shadow: 2px 5px 5px rgba(255, 239, 213, 0.5);
+
     &__title {
         padding: 0;
     }
