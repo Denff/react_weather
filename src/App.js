@@ -36,7 +36,7 @@ function App() {
 				<Wrapper>
 					<Switch>
 						<Route exact path="/" render={() => apiKey ? <Main apiKey={apiKey} /> : <Login />} />
-						<Route path="/hour/:hourId?" render={({ match: { params: { hourId } } }) => <Hour id={hourId} />} />
+						<Route path="/hour/:hourId?" render={({ match: { params: { hourId } } }) => <Hour id={hourId}/>} />
 					</Switch>
 				</Wrapper>
 			</BrowserRouter>

@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import Context from '../../Context';
 import Hour from './Hour';
 import style from './Days.module.scss';
-// import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 const Hours = () => {
@@ -12,12 +12,12 @@ const Hours = () => {
     
     return (
         <div className={style.hourList}>
-            {list.map((hour) => {
+            {list.map((hour, k) => {
 
                 return (
-                    // <NavLink to={'/hour/' + k} >
+                    <NavLink to={'/hour/' + k} >
                         <Hour
-                            // k={k}
+                            k={k}
                             key={hour.id}
                             date={hour.dt_txt}
                             temp={hour.main.temp}
@@ -25,7 +25,7 @@ const Hours = () => {
                             weather={hour.weather[0].main}
                         />
                         
-                    // </NavLink>
+                    </NavLink>
                 )
             })}
         </div>

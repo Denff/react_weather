@@ -5,8 +5,8 @@ import Header from '../Layout/Header';
 import Content from '../Layout/Content';
 import Footer from '../Layout/Footer';
 
-import Hours from '../Days/Hours';
 import SearchCity from '../SearchCity/SearchCity';
+import Days from '../Days/Days';
 
 const Main = () => {
     return (
@@ -14,7 +14,7 @@ const Main = () => {
             <Header />
             <Content>
                 <SearchCity />
-                <Hours />
+                <Days />
                 <Footer />
             </Content>
         </div>
