@@ -1,12 +1,13 @@
-import style from './CitySearchForm.module.scss';
+import style from './SearchCity.module.scss';
 import styles from '../Form/Form.module.scss';
 
 import React, { useContext } from 'react';
 import Context from '../../Context';
 import cn from 'classnames';
 
-const CitySearchForm = () => {
-    
+
+const SearchCity = () => {
+
     const { api_call } = useContext(Context);
 
     return (
@@ -15,15 +16,16 @@ const CitySearchForm = () => {
                 <label className={styles.form__label}>Введите город</label>
                 <div className={styles.form__box}>
                     <div className={styles.form__field}>
-                        <input autoComplete="off" name="city" type="text" placeholder="Челябинск"/>
+                        <input name="city" type="text" placeholder="Челябинск" />
                     </div>
                     <div className={styles.form__action}>
-                        <button className={styles.btn}>поиск</button>
+                        <button type="submit" className={styles.btn}>поиск</button>
                     </div>
                 </div>
             </form>
         </div>
     );
+
 }
 
-export default CitySearchForm;
+export default SearchCity;

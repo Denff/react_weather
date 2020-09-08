@@ -1,9 +1,7 @@
-// import style from './DayWeather.module.scss';
 
 import React, { useContext } from 'react';
 import Context from '../../Context';
-// import OneDay from './OneDay';
-// import { NavLink } from 'react-router-dom';
+
 import Today from '../Today/Today';
 import Days from './Days';
 

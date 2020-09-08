@@ -53,6 +53,9 @@ input {
     cursor:pointer;
     z-index: 4;
     outline: none;
+    &__login {
+        text-indent: 0;
+    }
 }
 
 .form {
@@ -107,5 +110,9 @@ input {
             background-color: rgba(0,0,0,0.7);
             z-index: 5;
         }
+    }
+    &__login {
+        padding: 20px;
+        background-color: rgba(0,0,0,0.1);
     }
 }

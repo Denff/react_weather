@@ -4,8 +4,8 @@
     flex-flow:  row wrap;
     &__day {
         flex: 1 0 auto;
-        width: auto;
-        max-width: 177px;
+        width: 100%;
+        text-align: center;
         margin: 10px;
         padding: 10px 20px;
         box-shadow: 2px 3px 7px #ccc;
@@ -19,6 +19,8 @@
 }
 
 .day {
+    position: relative;
+    font-weight:600;
     &__imgBox {
         flex: 1 0 auto;
         height: auto;
@@ -26,6 +28,11 @@
     }
     &__date {
         padding: 0px;
+        margin-bottom: 20px;
+        
+    }
+    &__temp {
+        font-size: 20px;
     }
 }
 .hourList {
@@ -74,3 +81,29 @@
 // .hour {
 //     box-shadow: 2px 3px 7px rgb(170, 22, 22);
 // }
+
+
+
+@media screen and (max-width: 991px) {
+    .list {
+        display: flex;
+        justify-content: flex-start;
+        flex-flow:  column nowrap;
+        align-items: center;
+        &__day {
+            text-align: left;
+            width: 300px;
+            max-width: 400px;
+        }
+        
+    }
+    .day {
+        height: 100px;
+        &__imgBox {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+
+        }
+    }
+}

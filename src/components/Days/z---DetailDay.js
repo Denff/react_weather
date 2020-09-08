@@ -1,4 +1,4 @@
-import style from './DayWeather.module.scss';
+import style from './Days.module.scss';
 
 import React from 'react';
 import Hour from './Hour';

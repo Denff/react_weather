@@ -4,32 +4,27 @@ import Main from './components/Main/Main';
 import './App.scss';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import OneDay from './components/DayWeather/OneDay';
-import ApiKeyFormC from './components/ApiKeyForm/ApiKeyFromC';
-
+import OneDay from './components/Days/OneDay';
+import Login from './components/Login/Login';
 
 
 class App extends Component {
 
 	render(){
-		// const apiKey = localStorage.getItem('api_key');
-		const apiKey = 'e659141f96cf034901170e56e6407daa';
+		const apiKey = localStorage.getItem('api_key');
+		// const apiKey = 'e659141f96cf034901170e56e6407daa';
 
 		return (
 			<BrowserRouter>
 				<Wrapper>
 					<Switch>
-						{/* <Route exact path="/" render={() => apiKey ? <Main apiKey={apiKey} /> : <ApiKeyFormC />} /> */}
-						<Route exact path="/" render={() => <Main apiKey={apiKey} />} />
+						<Route exact path="/" render={() => apiKey ? <Main apiKey={apiKey} /> : <Login />} />
 						<Route path="/day/:dayId?" render={({ match: { params: { dayId } } }) => <OneDay id={dayId} />} />
-						
 					</Switch>
-
 				</Wrapper>
 			</BrowserRouter>
 		);
 	}
-
 }
 
 export default App;

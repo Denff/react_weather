@@ -1,11 +1,10 @@
-import style from './DayWeather.module.scss';
+import style from './Days.module.scss';
 
 import React, { useContext } from 'react';
 import Context from '../../Context';
 import OneDay from './OneDay';
 import { NavLink } from 'react-router-dom';
-import DetailDay from './DetailDay';
-import Today from '../Today/Today';
+
 
 
 

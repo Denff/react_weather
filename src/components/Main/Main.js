@@ -5,17 +5,11 @@ import axios from 'axios';
 import Context from '../../Context';
 import Header from '../Layout/Header';
 import Content from '../Layout/Content';
-import WeatherSearch from '../CitySearchForm/CitySearchForm';
 import Error from '../Error/Error';
 import Footer from '../Layout/Footer';
-import Days from '../DayWeather/Days';
-import Today from '../Today/Today';
-import DaysContainer from '../DayWeather/DaysContainer';
-// import { withRouter } from 'react-router-dom';
 
-
-// const API_KEY = '';
-// let fff = 'e659141f96cf034901170e56e6407daa';
+import DaysContainer from '../Days/DaysContainer';
+import SearchCity from '../SearchCity/SearchCity';
 
 const Main = ({ apiKey }) => {
     const [list, setList] = useState(null);
@@ -26,10 +20,8 @@ const Main = ({ apiKey }) => {
         e.preventDefault();
         const location = e.target.elements.city.value;
         if (!location) {
-            return setError('Пожалуйста, введите свой город'), setList(null);
+            return setError('Пожалуйста, введите город'), setList(null);
         }
-
-        // const url = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=metric`;
         const url = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}`;
         const request = axios.get(url);
         const response = await request;
@@ -42,10 +34,9 @@ const Main = ({ apiKey }) => {
         <div className={style.main}>
             <Header />
             <Content>
-                <Context.Provider value={{ api_call, city, list }}>
-                    <WeatherSearch />
+                <Context.Provider value={{ api_call, city, setList, list }}>
+                    <SearchCity />
                     {error !== null && <p>{<Error error={error} />}</p>}
-                    {/* {city !== null && <Today />} */}
                     {city !== null && <DaysContainer />}
                 </Context.Provider>
                 <Footer />
@@ -54,5 +45,4 @@ const Main = ({ apiKey }) => {
     );
 }
 
-// export default withRouter(Main);
 export default Main;
